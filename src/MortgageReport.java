@@ -1,3 +1,5 @@
+import java.text.NumberFormat;
+
 public class MortgageReport {
     private MortgageCalculator calculator;
 
@@ -7,6 +9,11 @@ public class MortgageReport {
 
     public void printMortgage() {
         double mortgage = calculator.calculateMortgage();
-        System.out.println("Your Mortgage is: " + mortgage);
+
+        System.out.println();
+        System.out.println("MORTGAGE");
+        System.out.println("---------");
+        String mortgageFormatted = NumberFormat.getCurrencyInstance().format(mortgage);
+        System.out.println(mortgageFormatted);
     }
 }
